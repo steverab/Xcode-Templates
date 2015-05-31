@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.storyboardApplication</string>
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template provides a starting point for an interactive prototype.</string>
+	<key>Identifier</key>
+	<string>de.tum.ls1.prototype</string>
+	<key>Name</key>
+	<string>Prototype</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Definitions</key>
+	<dict>
+		<key>PrototypeURL.txt</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Supporting Files</string>
+				<string>Config</string>
+			</array>
+			<key>Beginning</key>
+			<string>___VARIABLE_prototypeURL___</string>
+		</dict>
+	</dict>
+	<key>Nodes</key>
+	<array>
+		<string>PrototypeURL.txt</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>universalDeviceFamily</string>
+			<key>Units</key>
+			<dict>
+				<key>Universal</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Base.lproj/Main.storyboard</key>
+						<dict>
+							<key>Path</key>
+							<string>Main_Universal.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
+						</dict>
+					</dict>
+				</dict>
+				<key>iPad</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Base.lproj/Main.storyboard</key>
+						<dict>
+							<key>Path</key>
+							<string>Main_iPad.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
+						</dict>
+					</dict>
+				</dict>
+				<key>iPhone</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>Base.lproj/Main.storyboard</key>
+						<dict>
+							<key>Path</key>
+							<string>Main_iPhone.storyboard</string>
+							<key>SortOrder</key>
+							<integer>99</integer>
+						</dict>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>ViewController.h:comments</string>
+						<string>ViewController.h:imports:importCocoa</string>
+						<string>ViewController.h:interface(___FILEBASENAME___ : UIViewController)</string>
+						<string>ViewController.m:comments</string>
+						<string>ViewController.m:imports:importHeader:ViewController.h</string>
+						<string>ViewController.m:extension</string>
+						<string>ViewController.m:implementation:methods:viewDidLoad(- (void\)viewDidLoad)</string>
+						<string>ViewController.m:implementation:methods:viewDidLoad:super</string>
+						<string>ViewController.m:implementation:methods:didReceiveMemoryWarning(- (void\)didReceiveMemoryWarning)</string>
+						<string>ViewController.m:implementation:methods:didReceiveMemoryWarning:super</string>
+					</array>
+				</dict>
+				<key>Swift</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>ViewController.swift:implementation:properties:webView</key>
+						<string>var webView: UIWebView!</string>
+						<key>ViewController.swift:implementation:methods:viewDidLoad:body</key>
+						<string>
+// Create UIWebView
+webView = UIWebView(frame: view.frame)
+webView.backgroundColor = UIColor.whiteColor()
+webView.setTranslatesAutoresizingMaskIntoConstraints(false)
+view.addSubview(webView)
+
+// Configure Auto Layout constraints
+let views = [&quot;view&quot;: view, &quot;webView&quot;: webView]
+view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(&quot;H:|-0-[webView]-0-|&quot;, options: .DirectionLeadingToTrailing, metrics: nil, views: views))
+view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(&quot;V:|-0-[webView]-0-|&quot;, options: .DirectionLeadingToTrailing, metrics: nil, views: views))
+
+// Load prototype
+let path = NSBundle.mainBundle().pathForResource(&quot;PrototypeURL&quot;, ofType: &quot;txt&quot;)
+var fileContent = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+fileContent = fileContent.stringByReplacingOccurrencesOfString(&quot;\n&quot;, withString: &quot;&quot;)
+let prototypeURL = NSURL(string: fileContent)!
+webView.loadRequest(NSURLRequest(URL: prototypeURL))</string>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>ViewController.swift:comments</string>
+						<string>ViewController.swift:imports:importCocoa</string>
+						<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+						<string>ViewController.swift:implementation:properties:webView</string>
+						<string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+						<string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
+						<string>ViewController.swift:implementation:methods:viewDidLoad:body</string>
+						<string>ViewController.swift:implementation:methods:didReceiveMemoryWarning(override func didReceiveMemoryWarning(\))</string>
+						<string>ViewController.swift:implementation:methods:didReceiveMemoryWarning:super</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>The URL pointing to the prototype.</string>
+			<key>EmptyReplacement</key>
+			<string>http://tum.de</string>
+			<key>Identifier</key>
+			<string>prototypeURL</string>
+			<key>Name</key>
+			<string>Prototype URL</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+	</array>
+	<key>SortOrder</key>
+	<integer>1</integer>
+</dict>
+</plist>
